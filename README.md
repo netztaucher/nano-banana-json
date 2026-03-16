@@ -35,3 +35,6 @@ The skill also covers native Gemini pro tools:
 - Automatic upscaling to 4K resolution.
 
 See `SKILL.md` for detailed instructions and prompting techniques.
+
+## About
+Created and maintained by [Netztaucher](https://netztaucher.com).

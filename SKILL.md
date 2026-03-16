@@ -15,7 +15,9 @@ A technique to extract an image's "DNA" into structured JSON using Gemini (Nano 
 - When generating consistent characters across multiple angles or scenes.
 - When performing aspect ratio changes (outpainting) or upscaling without trial and error.
 
-## Core Workflows
+## Core Workflows and Technical Architecture
+
+*Note: Nano Banana (Gemini 2.5 Flash Image / Gemini 3 Pro Image) uses LLM-integrated diffusion, meaning it processes text and image inputs simultaneously for native multimodal understanding rather than simple text-to-pixel translation.*
 
 ### 1. Consistent Image Editing (The "DNA" Extraction)
 1. **Extract:** Provide the reference image.
@@ -25,11 +27,21 @@ A technique to extract an image's "DNA" into structured JSON using Gemini (Nano 
 4. **Action:** Manually modify specific properties in the JSON (e.g., changing `"color": "black"` to `"color": "red"` for a lounge chair) and submit. The overall structure remains completely intact.
 
 ### 2. Style Transfer & Character Consistency
+*Formula: [Reference images] + [Relationship instruction] + [New scenario]*
 1. **Extract Style:** Provide a reference image (e.g., a portrait with a specific style).
 2. **Prompt:** "Describe the photography techniques in this image in JSON format."
    *(Gemini outputs JSON including lighting, composition, color palette, optics, focus, and post-processing).*
 3. **Target Character:** Provide 2-3 photos of the target person from different angles to establish facial consistency.
 4. **Generate:** Prompt: "Generate a photo of this person based on the following JSON file. \\n\\n [Insert Style JSON here]".
+
+### 3. Advanced Six-Component Steering
+To achieve systematic, repeatable results, ensure your JSON or prompt covers these six components:
+1. **Subject definition:** Specific entity or character description.
+2. **Action/pose:** Dynamic positioning or interaction.
+3. **Location/context:** Environmental setting and spatial framing.
+4. **Composition:** Shot type and framing (e.g., "medium-full shot, center-framed").
+5. **Style and film stock:** Artistic direction (e.g., "fashion magazine editorial, medium-format analog film").
+6. **Camera and lighting:** Hardware specs (e.g., "f/1.8, macro, Fujifilm color science").
 
 ### 3. Iterative Element Tweaks via Prompting
 If the user prefers not to manually edit the JSON:
