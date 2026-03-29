@@ -55,6 +55,8 @@ For precise spatial edits using Gemini's native UI:
 3. **Instruct:** Use the text tool to write instructions directly on the image (e.g., "turn the couch red" or "put a teddy bear on the chair").
 4. **Cleanup:** Once generated, if the instruction text remains visible in the final image, prompt: "Remove the red text" to clean it up.
 
+*Tip: The annotation editor includes undo/redo buttons (top right) to refine your brush strokes and text placements before submitting.*
+
 ### 5. Aspect Ratio & Outpainting (Pro Features)
 - **Resize:** Prompt: "Aspect ratio 9:16" (or "1:1", "21:9"). Gemini resizes the canvas instantly.
 - **Outpaint:** Prompt: "Generate a full body image of this person wearing jeans and holding a briefcase, 9:16 aspect ratio."
@@ -63,3 +65,4 @@ For precise spatial edits using Gemini's native UI:
 ## Best Practices
 - **Re-uploading:** Always download your latest generated image and re-upload it when making further iterative changes. This reinforces the "source of truth" and locks in consistency.
 - **Multiple Angles:** When establishing a new character, providing 2-3 photos from different angles significantly improves facial recognition and consistency.
+- **Watermark Removal:** Generated images may include a watermark. Remove it using the free tool built with Google AI Studio: upload the image, paint over the watermark with the brush tool, click "Remove Selected", and download the clean result.
